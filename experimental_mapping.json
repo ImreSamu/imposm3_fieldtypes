@@ -1,0 +1,224 @@
+{
+    "tags": {
+        "load_all": true,
+        "exclude": [
+            "created_by",
+            "source"
+        ]
+    },
+    "use_single_id_space": true,
+    "tables": {
+        "experimental_mapping_all": {
+            "fields": [
+                {
+                    "type": "id",
+                    "name": "osm_id",
+                    "key": null
+                },
+                {
+                    "type": "integer",
+                    "name": "admin_level",
+                    "key": "admin_level"
+                },
+                {
+                    "type": "echo_hello_world",
+                    "name": "echovar",
+                    "key": null
+                },
+                {
+                    "type": "sleep",
+                    "name": "sleepvar",
+                    "key": null
+                },   
+                {
+                    "type": "integer_tiny",
+                    "name": "admin_level_tiny",
+                    "key": "admin_level"
+                },
+                {
+                    "type": "string_char1",
+                    "name": "admin_level_char1",
+                    "key": "admin_level"
+                },                
+                {
+                    "type": "integer",
+                    "name": "population",
+                    "key": "population"
+                },
+                {
+                    "type": "integer_long",
+                    "name": "population_long",
+                    "key": "population"
+                },
+                {
+                    "type": "string",
+                    "name": "shop_string",
+                    "key": "shop"
+                },   
+                             
+                {
+                    "type": "string",
+                    "name": "name_it",
+                    "key": "name:it"
+                },   
+                {
+                    "type": "string",
+                    "name": "name_fr",
+                    "key": "name:fr"
+                },   
+                {
+                    "type": "string",
+                    "name": "name_en",
+                    "key": "name:en"
+                },  
+                {
+                    "type": "string",
+                    "name": "name",
+                    "key": "name"
+                },                                                                                                
+                {
+                    "args": {
+                        "keys": [
+                            "name:it",
+                            "name:fr",
+                            "name:en",
+                            "name"
+                        ]
+                    },
+                    "type": "coalesce",
+                    "name": "name_coalesce",
+                    "key": null
+                }, 
+                {
+                    "args": {
+                        "values": [
+                            "convenience",
+                            "supermarket",
+                            "bakery",
+                            "confectionery",
+                            "clothes",
+                            "car_repair",
+                            "tobacco",
+                            "hairdresser",
+                            "florist"
+                        ]
+                    },
+                    "type": "enumerate",
+                    "name": "shop_enumerate",
+                    "key": "shop"
+                },                          
+                {
+                    "args": {
+                        "values": [
+                            "convenience",
+                            "supermarket",
+                            "bakery",
+                            "confectionery",
+                            "clothes",
+                            "car_repair",
+                            "tobacco",
+                            "hairdresser",
+                            "florist"
+                        ]
+                    },
+                    "type": "enumerate_tiny",
+                    "name": "shop_enumerate_tiny",
+                    "key": "shop"
+                },
+                {
+                    "type": "mapping_key",
+                    "name": "mapping_key",
+                    "key": null
+                },
+                {
+                    "type": "mapping_value",
+                    "name": "mapping_value",
+                    "key": null
+                },
+                {
+                    "type": "mapping_key_value",
+                    "name": "mapping_key_value",
+                    "key": null
+                },
+
+
+                {
+                    "args": {
+                        "drop_keys": [
+                            "osm_timestamp",
+                            "osm_user",
+                            "osm_version"
+                        ]
+                    },
+                    "type": "hstore_tags_drop",
+                    "name": "tags",
+                    "key": null
+                },
+                {
+                    "args": {
+                        "keep_keys": [
+                            "osm_timestamp",
+                            "osm_user",
+                            "osm_version"
+                        ]
+                    },
+                    "type": "hstore_tags_keep",
+                    "name": "meta_tags",
+                    "key": null
+                },
+                {
+                    "args": {
+                        "keep_keys": [
+                            "name:*",
+                            "addr:*",
+                        ]
+                    },
+                    "type": "hstore_tags_keep",
+                    "name": "name_tags",
+                    "key": null
+                },
+
+                {
+                    "type": "current_datetimeutc",
+                    "name": "current_datetimeutc",
+                    "key": null
+                },
+                {
+                    "type": "current_dateutc",
+                    "name": "current_dateutc",
+                    "key": null
+                },
+                {
+                    "type": "jobstart_datetimeutc",
+                    "name": "jobstart_datetimeutc",
+                    "key": null
+                },
+                {
+                    "type": "jsonb_example",
+                    "name": "jsonb_example",
+                    "key": "name"
+                } ,
+                {
+                    "type": "json_example",
+                    "name": "json_example",
+                    "key": "name"
+                }                                        
+
+            ],
+            "type": "geometry",
+            "type_mappings": {
+                "points": {
+                     "shop": ["__any__"]
+                },
+                "linestrings": {
+                     "admin_level": ["__any__"]
+                },
+                "polygons": {
+                     "landuse": ["__any__"],
+                     "building": ["__any__"],
+                     "shop": ["__any__"]
+                }
+            }
+        }
+    }
+}
