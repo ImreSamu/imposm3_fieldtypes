@@ -9,25 +9,12 @@ import (
 
 func init() {
 
-	registerFieldTypes(
+	RegisterFieldTypes(
 		FieldType{
 			Name:     "coalesce",
 			GoType:   "string",
 			Func:     nil,
 			MakeFunc: getField_MakeCoalesce,
-		},
-		FieldTypeDoc{
-			Label: "Coalesce mapping",
-			Doc: "\n The 'coalesce' fieldtype returns the first of its arguments key value that is not null." +
-				"\n Similar than imposm2 'LocalizedName'" +
-				"\n Example ....     ", // markdown text ?
-			Parameters: "keys: ... ",
-			Status:     "draft", // draft,notest,tested,notsupported,production,depricated
-			Category:   "tags",  // tags,geometry,osm_id,system
-			Repository: "https://github.com/..../.....",
-			Lastupdate: "2015-12-21",
-			Author:     "@ImreSamu", // e-mail or other nick name
-			Tags:       nil,         //  any other key value ... map[string][]string
 		},
 	)
 }

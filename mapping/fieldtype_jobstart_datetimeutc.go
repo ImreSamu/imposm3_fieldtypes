@@ -11,25 +11,12 @@ var getField_JobStartDatetimeUTCformatted string
 
 func init() {
 
-	registerFieldTypes(
+	RegisterFieldTypes(
 		FieldType{
 			Name:     "jobstart_datetimeutc",
 			GoType:   "timestamp",
 			Func:     getField_JobStartDatetimeUTC,
 			MakeFunc: nil,
-		},
-		FieldTypeDoc{
-			Label: "return: IMPOSM3 Start datetime  -  example ",
-			Doc: "\n For demonstration purpose.  " +
-				"\n .... " +
-				"\n Example ....     ", // markdown text ?
-			Parameters: "",
-			Status:     "example", // draft,notest,tested,notsupported,production,depricated
-			Category:   "system",  // tags,geometry,osm_id,system
-			Repository: "https://github.com/..../.....",
-			Lastupdate: "2015-12-21",
-			Author:     "@ImreSamu", // e-mail or other nick name
-			Tags:       nil,         //  any other key value ... map[string][]string
 		},
 	)
 

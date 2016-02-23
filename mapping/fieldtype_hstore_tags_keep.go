@@ -13,25 +13,12 @@ func init() {
 
 	//registerFieldTypes(FieldType{"hstore_tags_keep", "hstore_string", nil, MakeHstoreKeep})
 
-	registerFieldTypes(
+	RegisterFieldTypes(
 		FieldType{
 			Name:     "hstore_tags_keep",
 			GoType:   "hstore_string",
 			Func:     nil,
 			MakeFunc: getField_MakeHstoreKeep,
-		},
-		FieldTypeDoc{
-			Label: "hstore tags keep",
-			Doc: "\n For demonstration purpose. ....  " +
-				"\n .... " +
-				"\n Example ....     ", // markdown text ?
-			Parameters: "",
-			Status:     "example", // draft,notest,tested,notsupported,production,depricated
-			Category:   "tags",    // tags,geometry,osm_id,system
-			Repository: "https://github.com/..../.....",
-			Lastupdate: "2015-12-21",
-			Author:     "@ImreSamu", // e-mail or other nick name
-			Tags:       nil,         //  any other key value ... map[string][]string
 		},
 	)
 
